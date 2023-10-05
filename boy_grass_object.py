@@ -35,18 +35,21 @@ class Ball:
         self.x = random.randint(50, 750)
         self.y = 599
         self.vy = random.randint(30, 70) / 10
-        self.frame = random.randint(0, 7)
         if random.randint(0, 1) == 0:
             self.image = load_image('ball21x21.png')
+            self.radius = 21//2
         else:
             self.image = load_image('ball41x41.png')
+            self.radius = 41//2
 
     def draw(self):
         self.image.draw(self.x, self.y)
 
     def update(self):
-        self.frame = (self.frame + 1) % 8
-        self.y -= self.vy
+        if self.y < 50 + self.radius:
+            self.y == 50 + self.radius
+        else:
+            self.y -= self.vy
 
 
 def handle_events():
