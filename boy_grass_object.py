@@ -26,7 +26,6 @@ class Boy:
 
     def update(self):
         self.frame = (self.frame + 1) % 8
-        # self.x += self.vx
         self.x += 5
 
 
